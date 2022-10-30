@@ -53,6 +53,8 @@ And if you click on To Do Manager you'll see this
 
 ![todo](https://user-images.githubusercontent.com/6226804/198862167-d98b24f3-1f3f-4ba9-995f-76414d065178.png)
 
+Clicking on the checkboxes next to an item will remove it from the to do list
+
 ## How it Works
 When you run the app, a local SQLite database (todolist.db) is created. This database will store your to do list items.
 The weather information is queried from a Home Assistant entiy named "weather.home". You can edit the Python code to change what this queries
