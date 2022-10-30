@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="{{ static_url('css/style.css') }}" media="screen" />
+        <meta name=”viewport” content=”width=device-width, initial-scale=1.0”>
+    </head>
+    <body>
+        <div id="todo">
+            <ul>
+                {% for item in items %}
+                    <li><input type="checkbox" id="{{ item[0] }}" name="id_{{ item[0] }}" value="true">{{ escape(item[1]) }}</li>
+                {% end %}
+            </ul>        
+        </div>
+        <form action="/todo" method="post">
+            <label for="title">New Item: </label>
+            <input type="text" name="title" value=""><br>
+            <br>
+            <input type="submit" value="Submit">
+          </form>
+          
+          <script type="text/javascript">
+            $( document ).ready(function() {
+                $("input[name^='id_']").on("click", function(self) {
+                    console.log(self.target.id + " checkbox clicked")
+                    $.post( "/deletetodo", { id: self.target.id } );
+                    location.reload(true)
+                });
+            });
+          </script>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <link rel="stylesheet" type="text/css" href="{{ static_url('css/style.css') }}" media="screen" />
+        <meta name=”viewport” content=”width=device-width, initial-scale=1.0”>
+    </head>
+    <body>
+        <div id="main">
+            <div class="split left">
+                <div id="todo">
+                    <h1 class="title">TO DO</h1>
+                    <ul>
+                        {% for item in items %}
+                            <li>{{ escape(item[1]) }}</li>
+                        {% end %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="split right">
+                <div id="weather">
+                    <h1 class="title">Weather</h1>
+                    <div id="condition">{{ weather["temperature"] }}° and {{ weather_state }}</div>
+                </div>
+                <!-- <div id="camera">
+                    <h1 id="title">Front Door</h1>
+                    <img src="{{ static_url('img/front_door.png') }}" />
+                </div> -->                
+            </div>
+        </div>
+    </body>
+</html>

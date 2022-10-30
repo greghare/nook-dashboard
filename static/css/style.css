@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Oxygen&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* -----------------------
+   LAYOUT 
+-------------------------*/
+
+/* Main container */
+#main {
+    padding: 20px;
+}
+
+/* Split container. Applied to left/right */
+.split {
+    z-index: 1;
+    position: fixed;
+    width: 50%;
+    height: 500px;
+    overflow-x: hidden;
+}
+
+/* Styles specific to left side */
+.left {
+    left: 0;
+}
+
+/* Styles specific to right side */
+.right {
+    right: 0;
+    border-left: 3px solid #000;
+}      
+  
+/* Can be used for centering content in either the left or right column */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+/* Title style (TO DO, WEATHER, etc.) */
+h1.title {
+    font-size: 45px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* -----------------------
+   TO DO LIST 
+-------------------------*/
+#todo ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#todo ul li {
+    margin: 10px;
+    padding: 10px;
+    border-left: 10px solid #000;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+/* -----------------------
+   WEATHER 
+-------------------------*/
+#temp {
+    font-size: 40px;
+    text-align: center;
+}
+
+#condition {
+    font-size: 40px;
+    text-align: center;    
+}
+
+/* -----------------------
+   CAMERA 
+-------------------------*/
+#camera img {
+    display: block;
+    width: 350px;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+ 
