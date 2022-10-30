@@ -21,13 +21,40 @@ This should be the URL of your Home Assistant instance, including the port. If y
 This should be your long-lived access token. You can create one by clicking your username in the bottom left of Home Assistant and selecting "create token" at the very bottom.
 
 ## Usage
-### You can start the application like this
+### 1. Install Python Tornado
+` pip install tornado `
+
+### 2. Run the server
+You can start the application like this
+
 ` ./nook.py `
 
 or 
 
 ` python3 nook.py `
 
-### To run it in the background on a Linux system, use this instead
+To run it in the background on a Linux system, use this instead
+
 ` nohup ./nook.py & `
+
+### 3. Load the main page
+
+In a browser go to: http://<ip_address_of_host>:8888
+You should see the following:
+
+![landing](https://user-images.githubusercontent.com/6226804/198862147-ae8838c8-700b-4944-81e9-5b84c0f1ad76.png)
+
+If you click on "Dashboard" you should get this
+
+![dashboard](https://user-images.githubusercontent.com/6226804/198862162-00659d0d-a355-465b-98f8-b97d89e953b5.png)
+
+
+And if you click on To Do Manager you'll see this
+
+![todo](https://user-images.githubusercontent.com/6226804/198862167-d98b24f3-1f3f-4ba9-995f-76414d065178.png)
+
+## How it Works
+When you run the app, a local SQLite database (todolist.db) is created. This database will store your to do list items.
+The weather information is queried from a Home Assistant entiy named "weather.home". You can edit the Python code to change what this queries
+
 
