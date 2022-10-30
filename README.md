@@ -4,6 +4,8 @@ This repository contains the files necessary for creating a simple web-based To 
 
 ** Disclaimer: This code could use some work. There's really not much error handling, and I'm sure some of it could be simplified a bit. I threw this together in a couple of days, so if you want to make updates or improvements, feel free to put in a pull request and we can improve it together
 
+![dashboard](https://user-images.githubusercontent.com/6226804/198862162-00659d0d-a355-465b-98f8-b97d89e953b5.png)
+
 ### There are 4 files and 1 directory
 1. nook.py - This contains the main logic for the todo list application, as well as the web server code
 2. templates/index.html - This is the main dashboard
