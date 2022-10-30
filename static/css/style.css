@@ -66,6 +66,16 @@ h1.title {
     text-transform: uppercase;
 }
 
+#todo-form input[type="submit"] {
+    padding: 10px;
+    font-size: 25px;
+}
+
+#todo-form input[type="text"] {
+    padding: 10px;
+    font-size: 25px;
+}
+
 /* -----------------------
    WEATHER 
 -------------------------*/

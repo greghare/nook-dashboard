@@ -17,14 +17,12 @@
                 {% end %}
             </ul>        
         </div>
-        <form action="/todo" method="post">
-            <label for="title">New Item: </label>
-            <input type="text" name="title" value=""><br>
-            <br>
-            <input type="submit" value="Submit">
-          </form>
+        <form id="todo-form" action="/todo" method="post" autocomplete="off">
+            <input type="text" name="title" value="" placeholder="Enter new to do item..." autofocus>
+            <input type="submit" value="SUBMIT">
+        </form>
           
-          <script type="text/javascript">
+        <script type="text/javascript">
             $( document ).ready(function() {
                 $("input[name^='id_']").on("click", function(self) {
                     console.log(self.target.id + " checkbox clicked")
@@ -32,6 +30,6 @@
                     location.reload(true)
                 });
             });
-          </script>
+        </script>
     </body>
 </html>
