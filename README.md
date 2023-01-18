@@ -58,6 +58,6 @@ Clicking on the checkboxes next to an item will remove it from the to do list
 
 ## How it Works
 When you run the app, a local SQLite database (todolist.db) is created. This database will store your to do list items.
-The weather information is queried from a Home Assistant entiy named "weather.home". You can edit the Python code to change what this queries
+The weather information is queried from a Home Assistant entity named "weather.home". You can edit the Python code to change what this queries
 
 
