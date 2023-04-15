@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <meta name=”viewport” content=”width=device-width, initial-scale=1.0”>
+        <link rel="icon" type="image/x-icon" href="{{ static_url('img/favicon.png') }}">
+        <link rel="stylesheet" type="text/css" href="{{ static_url('css/style.css') }}" media="screen" />
+    </head>
+    <body>
+        <div id="main">
+            <div class="split left">
+                <div id="todo">
+                    <h1 class="title">TO DO</h1>
+                    {% if not items %}
+                        <p style="text-align: center; text-transform: uppercase;">Nothing to do</p>
+                    {% else %}
+                        <ul>
+                            {% for item in items %}
+                                <li>{{ escape(item[1]) }}</li>
+                            {% end %}
+                        </ul>
+                    {% end %}
+                </div>
+                <div id="calendar">
+                    <h1 class="title">TODAY</h1>
+                    {% if not calendar %}
+                        <p style="text-align: center; text-transform: uppercase;">No events today</p>
+                    {% else %}
+                        <ul>
+                        {% for event in calendar %}
+                            {% if 'message' in event %}
+                            <p style="text-align: center; text-transform: uppercase;">Error retrieving events</p>
+                            {% else %}
+                                <li>{{ escape(event["summary"]) }}</li>
+                            {% end %}
+                        {% end %}
+                        </ul>   
+                    {% end %}
+                </div>                
+            </div>
+
+            <div class="split right">
+                <div id="weather" class="data-container">
+                    <div class="data-box current">
+                        <h2 class="label">Current</h2>
+                        <h1 class="temp">{{ weather["temperature"] }}</h1>
+                        <div class="condition"><img src="{{ static_url(weather_icon) }}" width="75px"/></div>                        
+                    </div>
+                    <div class="data-box forecast">
+                        <h2 class="label">5 Day</h2>
+                        <div class="day1">
+                            <span class="dow">{{ five_day[0]["dow"] }}</span>
+                            <span class="high">{{ five_day[0]["high"] }}</span>
+                            <span class="low">{{ five_day[0]["low"] }}</span>
+                        </div>
+                        <div class="day2">
+                            <span class="dow">{{ five_day[1]["dow"] }}</span>
+                            <span class="high">{{ five_day[1]["high"] }}</span>
+                            <span class="low">{{ five_day[1]["low"] }}</span>
+                        </div>
+                        <div class="day3">
+                            <span class="dow">{{ five_day[2]["dow"] }}</span>
+                            <span class="high">{{ five_day[2]["high"] }}</span>
+                            <span class="low">{{ five_day[2]["low"] }}</span>
+                        </div>
+                        <div class="day4">
+                            <span class="dow">{{ five_day[3]["dow"] }}</span>
+                            <span class="high">{{ five_day[3]["high"] }}</span>
+                            <span class="low">{{ five_day[3]["low"] }}</span>
+                        </div>
+                        <div class="day5">
+                            <span class="dow">{{ five_day[4]["dow"] }}</span>
+                            <span class="high">{{ five_day[4]["high"] }}</span>
+                            <span class="low">{{ five_day[4]["low"] }}</span>
+                        </div>                                                                        
+                    </div>
+
+                </div>
+                <div id="tide">
+                    <h1 class="title" style="line-height: 35px;"><img src="{{ static_url('img/icons/waves.png') }}" width="35px" style="vertical-align: bottom;" /> Tides</h1>
+                    <div class="condition">▲ {{ htt }} {{ hth }} ft</div>
+                    <div class="condition">▼ {{ ltt }} {{ lth }} ft</div>
+                </div>
+                <div id="sensor_states">
+                    <table class="sensors" cellspacing="0">
+                        <tr>
+                            <th></th>
+                            <th>SENSOR</th>
+                            <th>STATE</th>
+                        </tr>
+                        {% for sensor in sensors %}
+                        <tr>
+                            <td><img src="{{ static_url('img/icons/' + sensor['icon'] + '.png') }}" width="20px" /></td>
+                            <td>{{ escape(sensor["name"]) }}</td>
+                            <td class="state">{{ escape(sensor["state"]) }}</td>
+                        </tr>
+                        {% end %}
+                    </table>                    
+                </div>                            
+            </div>
+        </div>
+        <script type="text/javascript">
+            console.log("{{ weather['forecast'] }}");
+        </script>
+    </body>
+</html>
