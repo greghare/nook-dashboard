@@ -21,7 +21,7 @@ import os
 import configparser
 
 config = configparser.ConfigParser()  
-config.read("app.conf");
+config.read("/opt/nook-dashboard/app.conf");
 
 HA_URL = config["home_assistant"]["url"]
 HA_ACCESS_TOKEN = config["home_assistant"]["access_token"]
