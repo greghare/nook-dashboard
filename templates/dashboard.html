@@ -16,7 +16,7 @@
                     {% else %}
                         <ul>
                             {% for item in items %}
-                                <li>{{ escape(item[1]) }}</li>
+                                <li>{{ item[1] }}</li>
                             {% end %}
                         </ul>
                     {% end %}
@@ -31,7 +31,7 @@
                             {% if 'message' in event %}
                             <p style="text-align: center; text-transform: uppercase;">Error retrieving events</p>
                             {% else %}
-                                <li>{{ escape(event["summary"]) }}</li>
+                                <li>{{ event["summary"] }}</li>
                             {% end %}
                         {% end %}
                         </ul>   
