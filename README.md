@@ -54,7 +54,7 @@ And if you click on To Do Manager you'll see something like this:
 
 ![image](https://user-images.githubusercontent.com/6226804/232253106-7e14bec3-4308-4081-b23a-073b32acc6f5.png)
 
-You can bookmark ttp://<ip_address_of_host>:8888/todo on your phone to easily add new items within your home network. Eventually I'd like to switch this to use the Todoist integration from Home Assistant. If anyone feels ambitious and wants to jump on that, feel free to submit a pull request!
+You can bookmark http://<ip_address_of_host>:8888/todo on your phone to easily add new items within your home network. Eventually I'd like to switch this to use the Todoist integration from Home Assistant. If anyone feels ambitious and wants to jump on that, feel free to submit a pull request!
 
 Clicking a checkbox next to an item will remove it from the to do list
 
