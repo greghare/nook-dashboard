@@ -7,9 +7,13 @@
             integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
             crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="{{ static_url('css/style.css') }}" media="screen" />
-        <meta name=”viewport” content=”width=device-width, initial-scale=1.0”>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <form id="todo-form" action="/todo" method="post" autocomplete="off">
+            <input type="text" name="title" value="" placeholder="Enter new to do item..." autofocus>
+            <input type="submit" value="ADD">
+        </form>      
         <div id="todo">
             <ul>
                 {% for item in items %}
@@ -17,11 +21,6 @@
                 {% end %}
             </ul>        
         </div>
-        <form id="todo-form" action="/todo" method="post" autocomplete="off">
-            <input type="text" name="title" value="" placeholder="Enter new to do item..." autofocus>
-            <input type="submit" value="SUBMIT">
-        </form>
-          
         <script type="text/javascript">
             $( document ).ready(function() {
                 $("input[name^='id_']").on("click", function(self) {

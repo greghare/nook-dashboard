@@ -27,10 +27,47 @@ $ sudo systemctl daemon-reload
 ### 3. Configure the application
 ``` 
 $ cd /opt/nook-dashboard
-$ cp example.conf app.conf
+$ cp app.json.example app.json
 ```
-Open app.conf in your favorite text editor, and set your Home Assistant URL, Access Token, and Calendar entity to use.
-Open server.py and edit/remove any of the sensor states to configure it as you like.
+Open app.json in your favorite text editor, and configure the required items. At a minimum you must have
+- ha_url: Complete path to your Home Assistant instance, including the port. Use your local Home Assistant IP address and port
+- ha_access_token: To get an access token, follow the steps below
+  1. Click your profile icon in the bottom left of the Home Assistant sidebar
+  2. Click on "Security" at the top
+  3. At the bottom of the page, under "Long-lived access tokens" click on "Create token"
+  4. Name the token, and then click the copy button
+  5. Replace <LONG_LIVED_ACCESS_TOKEN> with your new access token
+
+Example configuration file
+```
+{
+  "ha_url": "https://<HOME_ASSISTANT_IP>:8123",
+  "ha_access_token": "<LONG_LIVED_ACCESS_TOKEN>",
+  "timezone": "America/New_York",
+  "calendar": "calendar.example_gmail_com",
+  "weather": "weather.forecast_home",
+  "featured_entity": {
+    "id": "climate.downstairs",
+    "attribute": "current_temperature",
+    "icon": "information"
+  },
+  "entities": [
+    { "id": "input_boolean.kitchen_motion", "property": "state", "icon": "motion-sensor" },
+    { "id": "light.under_cabinet_1", "property": "state", "icon": "lightbulb" },
+    { "id": "light.under_cabinet_2", "property": "state", "icon": "lightbulb" },
+    { "id": "sensor.pi_hole_ads_blocked_today", "property": "state", "icon": "lightbulb" },
+    { "id": "sun.sun", "property": "state", "icon": "weather-sunny" }
+  ],
+  "display": {
+    "show_todo": true,
+    "show_today_events": true,
+    "show_tomorrow_events": true,    
+    "show_weather": true,
+    "show_featured_entity": true,
+    "show_entity_table": true
+  }
+}
+```
 
 ### 4. Start the Service
 ```
@@ -48,11 +85,11 @@ You should see the following:
 
 If you click on "Dashboard" you should get this. If you don't see this screen, and instead see a 500 Internal Server error, it's probably because the server.py code is trying to load a Home Assistant entity which you don't have setup. If this is the case, ensure you have all of the same entities, or delete any sensors you don't have. 
 
-![image](https://user-images.githubusercontent.com/6226804/232252874-a0903732-f9f3-40bb-8c92-3dbd8757b225.png)
+<img width="790" height="592" alt="image" src="https://github.com/user-attachments/assets/9cd12298-400f-46c7-8afe-20229aad7673" />
 
 And if you click on To Do Manager you'll see something like this:
 
-![image](https://user-images.githubusercontent.com/6226804/232253106-7e14bec3-4308-4081-b23a-073b32acc6f5.png)
+<img width="790" height="592" alt="image" src="https://github.com/user-attachments/assets/3ab367f3-c91a-46df-ae8e-ea03aba5b8d1" />
 
 You can bookmark http://<ip_address_of_host>:8888/todo on your phone to easily add new items within your home network. Eventually I'd like to switch this to use the Todoist integration from Home Assistant. If anyone feels ambitious and wants to jump on that, feel free to submit a pull request!
 

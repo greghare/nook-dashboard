@@ -1,0 +1,23 @@
+{
+  "ha_url": "https://<HOME_ASSISTANT_IP>:8123",
+  "ha_access_token": "<LONG_LIVED_ACCESS_TOKEN>",
+  "timezone": "America/New_York",
+  "calendar": "<CALENDAR_ENTITY_ID>",
+  "weather": "<WEATHER_ENTITY_ID>",
+  "featured_entity": {
+    "id": "<FEATURED_ENTITY_ID>",
+    "attribute": "<FEATURED_ENTITY_ATTRIBUTE>",
+    "icon": "information"
+  },
+  "entities": [
+    { "id": "sun.sun", "property": "state", "icon": "weather-sunny" }
+  ],
+  "display": {
+    "show_todo": true,
+    "show_today_events": true,
+    "show_tomorrow_events": true,    
+    "show_weather": true,
+    "show_featured_entity": true,
+    "show_entity_table": true
+  }
+}

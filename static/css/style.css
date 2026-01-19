@@ -181,35 +181,35 @@ h1.temp {
 }
 
 /* -----------------------
-   TIDE 
+   FEATURED ENTITY 
 -------------------------*/
-#tide .title {
+#featured_entity .title {
     font-size: 35px;
     margin: 15px;
     text-align: center;
     text-transform: uppercase;
 }
 
-#tide .condition {
+#featured_entity .state {
     font-size: 30px;
     text-align: center;    
 }
 
 /* -----------------------
-   SENSORS 
+   ENTITIES 
 -------------------------*/
 
-#sensor_states .title {
+#entity_states .title {
     font-size: 35px;
     margin-bottom: 0;
 }
 
-#sensor_states .state {
+#entity_states .state {
     font-size: 30px;
     text-align: center;    
 }
 
-#sensor_states table.sensors {
+#entity_states table.entities {
     border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
@@ -218,22 +218,22 @@ h1.temp {
     width: 90%;
 }
 
-#sensor_states table.sensors td {
+#entity_states table.entities td {
     border: 1px solid;
     font-size: 20px;
     line-height: 30px;
     text-align: center;
 }
 
-#sensor_states table.sensors td img {
+#entity_states table.entities td img {
     vertical-align: middle;
 }
 
-#sensor_states table.sensors td.state {
+#entity_states table.entities td.state {
     text-transform: uppercase;
 }
 
-#sensor_states table.sensors th {
+#entity_states table.entities th {
     background-color: #CCC;
     border: 1px solid;
     padding: 5px;
