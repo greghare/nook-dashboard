@@ -16,7 +16,7 @@ Note: The application expects to be installed in /opt/nook-dashboard
 ``` 
 $ cd /opt
 $ git clone https://github.com/greghare/nook-dashboard.git
-$ pip install tornado
+$ pip install requirements.txt
 ```
 ### 2. Install the service
 ``` 
