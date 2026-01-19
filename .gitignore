@@ -182,8 +182,9 @@ cython_debug/
 .history
 .ionide
 
-# To Do list database
-todolist.db
+# Database Files
+*.db
 
 # Config Files
-app.conf
+*.json
+!app.json.example
