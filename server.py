@@ -23,7 +23,8 @@ from todo_client import TodoClient
 from dashboard import Dashboard
 
 # Load configuration from app.json
-with open("app.json") as f:
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+with open(os.path.join(BASE_DIR, "app.json")) as f:
     config = json.load(f)
 
 HA_URL = config["ha_url"]
