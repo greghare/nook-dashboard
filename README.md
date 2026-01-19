@@ -98,8 +98,4 @@ You can bookmark http://<ip_address_of_host>:8888/todo on your phone to easily a
 
 Clicking a checkbox next to an item will remove it from the to do list
 
-## How it Works Under the Hood
-When you run the app, a local SQLite database (todolist.db) is created. This database will store your to do list items.
-The weather, tide, sensor states, and calendar information, is queried from Home Assistant. You can edit the calendar which it pulls from in the config file. The other sensors/weather information currently has to be edited in the server.py file. Additional items will be added to the config file eventually.
-
-** Disclaimer: This code could use some work. There's really not much error handling, and I'm sure some of it could be simplified a bit. I threw this together in a couple of days, so if you want to make updates or improvements, feel free to put in a pull request and we can improve it together
+** Disclaimer: This code could use some work. Feel free to put in a pull request and we can improve it together
