@@ -69,6 +69,9 @@ Example configuration file
 }
 ```
 
+Note: If you hide all of the items in the right column (for example, weather, featured_entity, and the entity table), it should adjust the calendar to the width of the screen.
+      The same will occur if you hide all of the items in the left (todo, today_events, and tomorrow_events)
+      
 ### 4. Start the Service
 ```
 $ sudo service nook-dashboard start
