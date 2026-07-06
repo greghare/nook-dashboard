@@ -99,3 +99,5 @@ You can bookmark http://<ip_address_of_host>:8888/todo on your phone to easily a
 Clicking a checkbox next to an item will remove it from the to do list
 
 ** Disclaimer: This code could use some work. Feel free to put in a pull request and we can improve it together
+
+![Alt](https://repobeats.axiom.co/api/embed/8268a42a380972023dd1b9890b4925da2666a536.svg "Repobeats analytics image")
